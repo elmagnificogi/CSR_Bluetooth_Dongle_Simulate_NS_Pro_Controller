@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
 using System.Management;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace WindowsFormsApp1
 
 		private void BTDeviceSelector_Load(object sender, EventArgs e)
 		{
+			this.listBox1.Items.Clear();
 			this.usbDevices = BTDeviceSelector.GetUSBDevices();
 			foreach (BTDeviceSelector.USBDeviceInfo usbdeviceInfo in this.usbDevices)
 			{
@@ -108,7 +110,7 @@ namespace WindowsFormsApp1
 					{
 						BTController.DriverReplace(VID, PID);
 					});
-					MessageBox.Show("替换驱动成功", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show("替换驱动完成\r\n如果驱动管理器中没有出现CSR8510 A10，请重启电脑后重试", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					base.Close();
 				}
 				catch
@@ -193,6 +195,40 @@ namespace WindowsFormsApp1
 			PowerOff = 8,
 			Forced = 4
 		}
-	}
+
+		public const int CM_LOCATE_DEVNODE_NORMAL = 0x00000000;
+		public const int CM_REENUMERATE_NORMAL = 0x00000000;
+		public const int CR_SUCCESS = 0x00000000;
+
+		[DllImport("CfgMgr32.dll", SetLastError = true)]
+		public static extern int CM_Locate_DevNodeA(ref int pdnDevInst, string pDeviceID, int ulFlags);
+
+		[DllImport("CfgMgr32.dll", SetLastError = true)]
+		public static extern int CM_Reenumerate_DevNode(int dnDevInst, int ulFlags);
+
+		private void button2_Click(object sender, EventArgs e)
+        {
+			int pdnDevInst = 0;
+			if (CM_Locate_DevNodeA(ref pdnDevInst, null, CM_LOCATE_DEVNODE_NORMAL) != CR_SUCCESS)
+			{
+				MessageBox.Show("需要管理员权限允许-0");
+			}
+			int ret = CM_Reenumerate_DevNode(pdnDevInst, CM_REENUMERATE_NORMAL);
+			if (ret != CR_SUCCESS)
+			{
+				MessageBox.Show("需要管理员权限允许-1");
+			}
+
+			this.listBox1.Items.Clear();
+			this.usbDevices = BTDeviceSelector.GetUSBDevices();
+			foreach (BTDeviceSelector.USBDeviceInfo usbdeviceInfo in this.usbDevices)
+			{
+				Console.WriteLine(usbdeviceInfo.DeviceID);
+				Console.WriteLine(usbdeviceInfo.PnpDeviceID);
+				Console.WriteLine(usbdeviceInfo.Description);
+				this.listBox1.Items.Add(usbdeviceInfo.Description);
+			}
+		}
+    }
 
 }

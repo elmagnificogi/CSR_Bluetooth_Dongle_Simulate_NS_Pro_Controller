@@ -8,3 +8,14 @@ E:\temp\逆向\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.
 E:\temp\逆向\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
 E:\temp\逆向\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
 E:\temp\逆向\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+E:\Github\CSR_Bluetooth_Dongle_Simulate_NS_Pro_Controller\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe.config
+E:\Github\CSR_Bluetooth_Dongle_Simulate_NS_Pro_Controller\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe
+E:\Github\CSR_Bluetooth_Dongle_Simulate_NS_Pro_Controller\WindowsFormsApp1\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
+E:\Github\CSR_Bluetooth_Dongle_Simulate_NS_Pro_Controller\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+E:\Github\CSR_Bluetooth_Dongle_Simulate_NS_Pro_Controller\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.BTDeviceSelector.resources
+E:\Github\CSR_Bluetooth_Dongle_Simulate_NS_Pro_Controller\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Form1.resources
+E:\Github\CSR_Bluetooth_Dongle_Simulate_NS_Pro_Controller\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\Github\CSR_Bluetooth_Dongle_Simulate_NS_Pro_Controller\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\Github\CSR_Bluetooth_Dongle_Simulate_NS_Pro_Controller\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\Github\CSR_Bluetooth_Dongle_Simulate_NS_Pro_Controller\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
+E:\Github\CSR_Bluetooth_Dongle_Simulate_NS_Pro_Controller\WindowsFormsApp1\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
