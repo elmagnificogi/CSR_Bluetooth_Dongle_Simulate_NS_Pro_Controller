@@ -106,10 +106,7 @@ namespace WindowsFormsApp1
 					string deviceID = this.usbDevices[this.listBox1.SelectedIndex].DeviceID;
 					int VID = int.Parse(deviceID.Substring(deviceID.IndexOf("VID_") + 4, 4), NumberStyles.HexNumber);
 					int PID = int.Parse(deviceID.Substring(deviceID.IndexOf("PID_") + 4, 4), NumberStyles.HexNumber);
-					Task.Factory.StartNew(delegate ()
-					{
-						BTController.DriverReplace(VID, PID);
-					});
+					BTController.DriverReplace(VID, PID);
 					MessageBox.Show("替换驱动完成\r\n如果驱动管理器中没有出现CSR8510 A10，请重启电脑后重试", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					base.Close();
 				}
@@ -117,9 +114,9 @@ namespace WindowsFormsApp1
 				{
 					MessageBox.Show("替换驱动失败\r\n建议重启电脑或者重插蓝牙适配器后再次尝试", "错误", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 				}
-				//this.Close();
+				this.Close();
 			}
-			//this.Close();
+			this.Close();
 			this.Hide();
 		}
 
