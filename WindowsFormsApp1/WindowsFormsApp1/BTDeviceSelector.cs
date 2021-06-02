@@ -117,9 +117,9 @@ namespace WindowsFormsApp1
 				{
 					MessageBox.Show("替换驱动失败\r\n建议重启电脑或者重插蓝牙适配器后再次尝试", "错误", MessageBoxButtons.OK, MessageBoxIcon.Hand);
 				}
-				this.Close();
+				//this.Close();
 			}
-			this.Close();
+			//this.Close();
 			this.Hide();
 		}
 
